@@ -7,7 +7,7 @@ import { MuiThemeProvider } from '@material-ui/core/styles'
 import App from './App'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import theme from './theme'
-import { VideoProvider } from './components/VideoProvider'
+import VideoProvider from './components/VideoProvider'
 import * as serviceWorker from './serviceWorker'
 
 const connectionOptions = {
