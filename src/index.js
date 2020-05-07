@@ -5,9 +5,11 @@ import { CssBaseline } from '@material-ui/core'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 
 import App from './App'
+import useAppState, { AppStateProvider } from './state'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import theme from './theme'
 import VideoProvider from './components/VideoProvider'
+import ErrorDialog from './components/ErrorDialog'
 import * as serviceWorker from './serviceWorker'
 
 const connectionOptions = {
@@ -29,9 +31,12 @@ const connectionOptions = {
 }
 
 const VideoApp = () => {
+  const { error, setError } = useAppState()
+
   return (
     <VideoProvider options={connectionOptions}>
-      <App />
+      <ErrorDialog dismissError={() => setError(null)} error={error} />
+      <App/>
     </VideoProvider>
   )
 }
