@@ -35,7 +35,7 @@ const VideoApp = () => {
 
   return (
     <VideoProvider options={connectionOptions}>
-      <ErrorDialog dismissError={() => setError(null)} error={error} />
+      <ErrorDialog dismissError={() => setError(null)} error={error}/>
       <App/>
     </VideoProvider>
   )
@@ -57,7 +57,6 @@ ReactDOM.render(
         </Switch>
       </AppStateProvider>
     </Router>
-    <App />
   </MuiThemeProvider>,
   document.getElementById('root')
 )

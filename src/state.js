@@ -3,7 +3,7 @@ import React, { createContext, useContext, useState } from 'react'
 export const StateContext = createContext()
 
 export const AppStateProvider = ({ children }) => {
-  const [error, setError] = useState()
+  const [error, setError] = useState(null)
   const [isFetching, setIsFetching] = useState(false)
 
   const contextValue = {

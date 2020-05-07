@@ -22,7 +22,7 @@ const ErrorDialog = ({ dismissError, error }) => {
     <Dialog open={error !== null} onClose={() => dismissError()} fullWidth={true} maxWidth="xs">
       <DialogTitle>ERROR</DialogTitle>
       <DialogContent>
-        <DialogContentText>{enhancedMessage}</DialogContentText>
+        <DialogContentText>{enhancedMessage()}</DialogContentText>
         {code && (
           <pre>
             <code>Error Code: {code}</code>
