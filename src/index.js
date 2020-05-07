@@ -45,11 +45,17 @@ ReactDOM.render(
   <MuiThemeProvider theme={theme}>
     <CssBaseline />
     <Router>
-      <Switch>
-        <Route exact path='/' component={VideoApp}/>
-        <Route path='/room/:URLRoomName' component={VideoApp}/>
-        <Redirect to='/'/>
-      </Switch>
+      <AppStateProvider>
+        <Switch>
+          <Route exact path='/'>
+            <VideoApp/>
+          </Route>
+          <Route path='/room/:URLRoomName'>
+            <VideoApp/>
+          </Route>
+          <Redirect to='/'/>
+        </Switch>
+      </AppStateProvider>
     </Router>
     <App />
   </MuiThemeProvider>,

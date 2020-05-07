@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState } from 'react'
 
+export const StateContext = createContext()
+
 export const AppStateProvider = ({ children }) => {
   const [error, setError] = useState()
   const [isFetching, setIsFetching] = useState(false)
@@ -30,8 +32,7 @@ export const AppStateProvider = ({ children }) => {
   return <StateContext.Provider value={{ ...contextValue, getToken }}>{children}</StateContext.Provider>
 }
 
-const StateContext = () => {
-  const StateContext = createContext()
+const useAppState = () => {
   const context = useContext(StateContext)
   if (!context) {
     throw new Error('useAppState must be used within the AppStateProvider')
@@ -39,4 +40,4 @@ const StateContext = () => {
   return context
 }
 
-export default StateContext
+export default useAppState
