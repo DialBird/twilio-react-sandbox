@@ -1,12 +1,19 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { styled } from '@material-ui/core/styles'
 
-function App() {
+import useHeight from './hooks/useHeight'
+
+const Container = styled('div')({
+  display: 'grid',
+  gridTemplateRows: 'auto 1fr'
+})
+
+const App = () => {
+  const height = useHeight()
+
   return (
-    <div className="App">
+    <Container style={{height}}>
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -19,7 +26,7 @@ function App() {
           Learn React
         </a>
       </header>
-    </div>
+    </Container>
   )
 }
 
