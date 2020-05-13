@@ -1,5 +1,5 @@
 import React from 'react'
-import useVideoContext from '../../hooks/useVideoContext'
+import useVideoContext from '../VideoProvider'
 import AudioLevelIndicator from '../AudioLevelIndicator'
 
 const LocalAudioLevelIndicator = () => {

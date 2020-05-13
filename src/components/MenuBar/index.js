@@ -12,7 +12,7 @@ import LocalAudioLevelIndicator from './LocalAudioLevelIndicator'
 import Menu from './Menu'
 
 import { useParams } from 'react-router-dom'
-import useVideoContext from '../../hooks/useVideoContext'
+import useVideoContext from '../VideoProvider'
 import useRoomState from '../../hooks/useRoomState'
 import useAppState from '../AppStateProvider'
 

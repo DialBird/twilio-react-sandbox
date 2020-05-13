@@ -1,6 +1,6 @@
 import { useCallback } from 'react'
 import useIsTrackEnabled from './useIsTrackEnabled'
-import useVideoContext from './useVideoContext'
+import useVideoContext from '../components/VideoProvider'
 
 export default function useLocalAudioToggle() {
   const { localTracks } = useVideoContext()

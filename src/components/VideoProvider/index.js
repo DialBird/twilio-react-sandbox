@@ -1,4 +1,4 @@
-import React, { createContext } from 'react'
+import React, { createContext, useContext } from 'react'
 import { SelectedParticipantProvider } from './useSelectedParticipant'
 
 import useLocalTracks from './useLocalTracks'
@@ -7,9 +7,14 @@ import useHandleRoomDisconnectionErrors from './useHandleRoomDisconnectionErrors
 import useHandleOnDisconnect from './useHandleOnDisconnect'
 import useHandleTrackPublicationFailed from './useHandleTrackPublicationFailed'
 
-export const VideoContext = createContext()
+const VideoContext = createContext()
 
-const VideoProvider = ({ options, children, onError = () => {}, onDisconnect = () => {}}) => {
+export const VideoProvider = ({
+  options,
+  children,
+  onError = () => {},
+  onDisconnect = () => {}
+}) => {
   const onErrorCallback = error => {
     console.log(`ERROR: ${error.message}`, error)
     onError(error)
@@ -39,4 +44,12 @@ const VideoProvider = ({ options, children, onError = () => {}, onDisconnect = (
   )
 }
 
-export default VideoProvider
+const useVideoContext = () => {
+  const context = useContext(VideoContext)
+  if (!context) {
+    throw new Error('useVideoContext must be used within a VideoProvider')
+  }
+  return context
+}
+
+export default useVideoContext

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import useVideoContext from './useVideoContext'
+import useVideoContext from '../components/VideoProvider'
 
 /*
   Returns the participant that is sharing their screen (if any). This hook assumes that only one participant

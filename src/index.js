@@ -8,7 +8,7 @@ import App from './App'
 import useAppState, { AppStateProvider } from './components/AppStateProvider'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import theme from './theme'
-import VideoProvider from './components/VideoProvider'
+import { VideoProvider } from './components/VideoProvider'
 import ErrorDialog from './components/ErrorDialog'
 import * as serviceWorker from './serviceWorker'
 

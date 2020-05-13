@@ -1,6 +1,6 @@
 import React from 'react'
 import VideoTrack from './VideoTrack'
-import useVideoContext from '../hooks/useVideoContext'
+import useVideoContext from './VideoProvider'
 
 export default function LocalVideoPreview() {
   const { localTracks } = useVideoContext()

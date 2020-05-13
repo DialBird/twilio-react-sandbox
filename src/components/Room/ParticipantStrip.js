@@ -2,7 +2,7 @@ import React from 'react'
 import Participant from './Participant'
 import { styled } from '@material-ui/core/styles'
 import useParticipants from '../../hooks/useParticipants'
-import useVideoContext from '../../hooks/useVideoContext'
+import useVideoContext from '../VideoProvider'
 import useSelectedParticipant from '../VideoProvider/useSelectedParticipant'
 
 const Container = styled('aside')(({ theme }) => ({

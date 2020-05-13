@@ -1,7 +1,7 @@
 import React from 'react'
 import Publication from './Publication'
 import usePublications from '../../hooks/usePublications'
-import useVideoContext from '../../hooks/useVideoContext'
+import useVideoContext from '../VideoProvider'
 
 /*
  *  The object model for the Room object (found here: https://www.twilio.com/docs/video/migrating-1x-2x#object-model) shows

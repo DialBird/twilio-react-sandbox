@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useState } from 'react'
-import useVideoContext from './useVideoContext'
+import useVideoContext from '../components/VideoProvider'
 
 export default function useLocalVideoToggle() {
   const {

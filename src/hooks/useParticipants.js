@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import useDominantSpeaker from './useDominantSpeaker'
-import useVideoContext from './useVideoContext'
+import useVideoContext from '../components/VideoProvider'
 
 export default function useParticipants() {
   const { room } = useVideoContext()

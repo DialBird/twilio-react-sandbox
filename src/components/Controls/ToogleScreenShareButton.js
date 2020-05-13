@@ -8,7 +8,7 @@ import Tooltip from '@material-ui/core/Tooltip'
 
 import useScreenShareToggle from '../../hooks/useScreenShareToggle'
 import useScreenShareParticipant from '../../hooks/useScreenShareParticipant'
-import useVideoContext from '../../hooks/useVideoContext'
+import useVideoContext from '../VideoProvider'
 
 export const SCREEN_SHARE_TEXT = 'Share Screen'
 export const STOP_SCREEN_SHARE_TEXT = 'Stop Sharing Screen'

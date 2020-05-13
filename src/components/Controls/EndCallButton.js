@@ -5,7 +5,7 @@ import CallEnd from '@material-ui/icons/CallEnd'
 import Fab from '@material-ui/core/Fab'
 import Tooltip from '@material-ui/core/Tooltip'
 
-import useVideoContext from '../../hooks/useVideoContext'
+import useVideoContext from '../VideoProvider'
 
 const useStyles = makeStyles(theme => {
   return createStyles({

@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react'
 
-export const AppStateContext = createContext()
+const AppStateContext = createContext()
 
 export const AppStateProvider = ({ children }) => {
   const [error, setError] = useState(null)

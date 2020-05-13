@@ -1,4 +1,4 @@
-import useVideoContext from './useVideoContext'
+import useVideoContext from '../components/VideoProvider'
 import useDominantSpeaker from './useDominantSpeaker'
 import useParticipants from './useParticipants'
 import useScreenShareParticipant from './useScreenShareParticipant'
