@@ -3,7 +3,7 @@ import { styled } from '@material-ui/core/styles'
 
 import Controls from './components/Controls'
 import LocalVideoPreview from './components/LocalVideoPreview'
-// import Room from './components/Room'
+import Room from './components/Room'
 import MenuBar from './components/MenuBar'
 import ReconnectingNotification from './components/ReconnectingNotification'
 
@@ -27,7 +27,7 @@ const App = () => {
     <Container style={{height}}>
       <MenuBar/>
       <Main>
-        <LocalVideoPreview/>
+        {roomState === 'disconnected' ? <LocalVideoPreview /> : <Room />}
         <Controls/>
       </Main>
       <ReconnectingNotification/>
