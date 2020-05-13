@@ -5,7 +5,7 @@ import { CssBaseline } from '@material-ui/core'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 
 import App from './App'
-import useAppState, { AppStateProvider } from './state'
+import useAppState, { AppStateProvider } from './components/AppStateProvider'
 import { BrowserRouter as Router, Redirect, Route, Switch } from 'react-router-dom'
 import theme from './theme'
 import VideoProvider from './components/VideoProvider'

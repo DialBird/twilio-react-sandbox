@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState } from 'react'
 
-export const StateContext = createContext()
+export const AppStateContext = createContext()
 
 export const AppStateProvider = ({ children }) => {
   const [error, setError] = useState(null)
@@ -29,11 +29,11 @@ export const AppStateProvider = ({ children }) => {
       })
   }
 
-  return <StateContext.Provider value={{ ...contextValue, getToken }}>{children}</StateContext.Provider>
+  return <AppStateContext.Provider value={{ ...contextValue, getToken }}>{children}</AppStateContext.Provider>
 }
 
 const useAppState = () => {
-  const context = useContext(StateContext)
+  const context = useContext(AppStateContext)
   if (!context) {
     throw new Error('useAppState must be used within the AppStateProvider')
   }

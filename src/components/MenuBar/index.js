@@ -14,7 +14,7 @@ import Menu from './Menu'
 import { useParams } from 'react-router-dom'
 import useVideoContext from '../../hooks/useVideoContext'
 import useRoomState from '../../hooks/useRoomState'
-import useAppState from '../../state'
+import useAppState from '../AppStateProvider'
 
 const useStyles = makeStyles(theme => {
   return createStyles({
