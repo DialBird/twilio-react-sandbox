@@ -15,6 +15,7 @@ const useStyles = makeStyles(theme => {
   })
 })
 
+// roomState !== 'disconnectedの時にしかrenderされないので、roomは必ず入る
 const EndCallButton = () => {
   const classes = useStyles()
   const { room } = useVideoContext()

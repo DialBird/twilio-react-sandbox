@@ -38,6 +38,11 @@ export const useLocalVideoTrack = () => {
   }, [])
 
   useEffect(() => {
+    // We get a new local video track when the app loads
+    getLocalVideoTrack()
+  }, [getLocalVideoTrack])
+
+  useEffect(() => {
     const handleStopped = () => setTrack(undefined)
     if (track) {
       track.on('stopped', handleStopped)

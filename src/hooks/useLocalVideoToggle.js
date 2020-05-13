@@ -1,15 +1,20 @@
-import { useCallback } from 'react'
+import { useCallback, useEffect, useState } from 'react'
 import useVideoContext from './useVideoContext'
 
 export default function useLocalVideoToggle() {
   const {
-    room: { localParticipant },
+    room,
     localTracks,
     getLocalVideoTrack,
   } = useVideoContext()
   const videoTrack = localTracks.find(track => track.name === 'camera')
+  const [localParticipant, setLocalParticipant] = useState()
 
-  const toggleVideoEnabled = useCallback(() => {
+  useEffect(() => {
+    if (room) setLocalParticipant(room.localParticipant)
+  }, [room])
+
+  const toggleVideoEnabled = useCallback(async () => {
     if (videoTrack) {
       if (localParticipant) {
         const localTrackPublication = localParticipant.unpublishTrack(videoTrack)
@@ -18,11 +23,10 @@ export default function useLocalVideoToggle() {
       }
       videoTrack.stop()
     } else {
-      getLocalVideoTrack().then(track => {
-        if (localParticipant) {
-          localParticipant.publishTrack(track)
-        }
-      })
+      const track = await getLocalVideoTrack()
+      if (localParticipant) {
+        localParticipant.publishTrack(track)
+      }
     }
   }, [videoTrack, localParticipant, getLocalVideoTrack])
 

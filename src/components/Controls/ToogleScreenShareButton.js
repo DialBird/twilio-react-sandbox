@@ -27,6 +27,7 @@ const useStyles = makeStyles(theme => {
   })
 })
 
+// roomState !== 'disconnectedの時にしかrenderされないので、roomは必ず入る
 const ToggleScreenShareButton = props => {
   const classes = useStyles()
   const [isScreenShared, toggleScreenShare] = useScreenShareToggle()

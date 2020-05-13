@@ -1,15 +1,14 @@
 import { useEffect } from 'react'
 
 const useHandleTrackPublicationFailed = (room, onError) => {
-  const { localParticipant } = room
   useEffect(() => {
-    if (localParticipant) {
-      localParticipant.on('trackPublicationFailed', onError)
+    if (room && room.localParticipant) {
+      room.localParticipant.on('trackPublicationFailed', onError)
       return () => {
-        localParticipant.off('trackPublicationFailed', onError)
+        room.localParticipant.off('trackPublicationFailed', onError)
       }
     }
-  }, [localParticipant, onError])
+  }, [room, onError])
 }
 
 export default useHandleTrackPublicationFailed
