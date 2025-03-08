@@ -18,7 +18,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-    "twilio": "^3.43.0",
+    "twilio": "^5.4.5",
     "twilio-video": "^2.4.0"
   },
   "proxy": "http://localhost:8081/",
